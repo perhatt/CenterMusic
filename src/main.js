@@ -17,10 +17,4 @@ const vuetify = createVuetify({
   directives,
 });
 
-// 定义CatDialog组件
-const CatDialog = defineComponent({
-  name: "CatDialog",
-  // 其他选项...
-});
-
 createApp(App).use(vuetify).mount("#app");
