@@ -1,50 +1,43 @@
 <template>
-    <transition name="dialog">
-        <div class="fixed top-0 lef-0 w-screen h-screen flex items-center justify-center z-50 mx-0 my-auto bg-red"
-            v-show="visible">
-            <div class="bg-white rounded-3xl w-auto p-4">
-                <slot>
-                </slot>
-            </div>
-        </div>
-    </transition>
+  <transition name="fade">
+    <div
+      class="fixed top-[26px] right-[calc(10%+2px)] w-[calc(80%-4px)] h-[calc(100%-134px)] rounded-t-3xl p-4 z-50 flex bg-[rgb(27,27,35)]"
+      v-show="visible"
+    >
+      <div class="w-full h-full">
+        <slot> </slot>
+      </div>
+    </div>
+  </transition>
 </template>
 
 <script>
-
 export default {
-    name: "Dialog",
-    props: {
-        visible: {
-            type: Boolean,
-            default: false,
-        }
+  name: "MusicInfo",
+  data() {
+    return {};
+  },
+  props: {
+    visible: {
+      type: Boolean,
+      default: false,
     },
-    data() {
-        return {};
-    },
+  },
 };
 </script>
-<style  lang="scss" scoped>
-.dialog-enter-active {
-    animation: fade 0.2s ease-in-out;
+
+<style lang="scss" scoped>
+.fade-enter-active {
+  transition: all 0.3s ease-out;
 }
 
-.dialog-leave-active {
-    animation: fade 0.2s reverse;
+.fade-leave-active {
+  transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
 }
 
-@keyframes fade {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-        transform: scale(0.8);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-        transform: scale(1);
-    }
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateY(20px);
+  opacity: 0;
 }
 </style>

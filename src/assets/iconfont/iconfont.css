@@ -1,51 +1,123 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4277452 */
-  src: url('iconfont.woff2?t=1697366316030') format('woff2'),
-       url('iconfont.woff?t=1697366316030') format('woff'),
-       url('iconfont.ttf?t=1697366316030') format('truetype');
+  src: url('iconfont.woff2?t=1700317139491') format('woff2'),
+       url('iconfont.woff?t=1700317139491') format('woff'),
+       url('iconfont.ttf?t=1700317139491') format('truetype');
 }
 
-[class^="iconfont"],[class*="iconfont"] {
+[class^="iconfont"],
+[class*="iconfont"] {
   font-family: "iconfont" !important;
-  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-edit-:before {
+  content: "\e83d";
+}
+
 .icon-home:before {
-  content: "\e8c6";
+  content: "\e85b";
 }
 
-.icon-edit:before {
-  content: "\e7a0";
+.icon-user-:before {
+  content: "\e85c";
 }
 
-.icon-albums:before {
-  content: "\e787";
+.icon-bank:before {
+  content: "\e834";
 }
 
-.icon-artist:before {
-  content: "\e6ec";
+.icon-calendar-:before {
+  content: "\e837";
 }
 
-.icon-liebiao:before {
-  content: "\e601";
+.icon-disc:before {
+  content: "\e83c";
 }
 
-.icon-like:before {
-  content: "\eca1";
+.icon-search-:before {
+  content: "\e857";
 }
 
-.icon-bofang:before {
-  content: "\e693";
+.icon-upload-:before {
+  content: "\e864";
 }
 
-.icon-shangyishou:before {
-  content: "\e603";
+.icon-arrow-down-:before {
+  content: "\e82d";
 }
 
-.icon-xiayishou:before {
-  content: "\e602";
+.icon-arrow-right-:before {
+  content: "\e82e";
+}
+
+.icon-arrow-left-:before {
+  content: "\e82f";
+}
+
+.icon-arrow-left-1:before {
+  content: "\e830";
+}
+
+.icon-arrow-up-:before {
+  content: "\e831";
+}
+
+.icon-arrow-right-1:before {
+  content: "\e832";
+}
+
+.icon-bullet-list:before {
+  content: "\e833";
+}
+
+.icon-close-:before {
+  content: "\e835";
+}
+
+.icon-check-:before {
+  content: "\e836";
+}
+
+.icon-cloud-upload:before {
+  content: "\e838";
+}
+
+.icon-download-:before {
+  content: "\e83b";
+}
+
+.icon-filter-:before {
+  content: "\e83f";
+}
+
+.icon-graph-:before {
+  content: "\e846";
+}
+
+.icon-play-next:before {
+  content: "\e850";
+}
+
+.icon-play:before {
+  content: "\e851";
+}
+
+.icon-play-previous:before {
+  content: "\e852";
+}
+
+.icon-settings-:before {
+  content: "\e856";
+}
+
+.icon-star:before {
+  content: "\e859";
+}
+
+.icon-pause:before {
+  content: "\e863";
 }
 
