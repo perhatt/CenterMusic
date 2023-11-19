@@ -1,46 +1,33 @@
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
     path: "/",
-    component: () => import("../pages/home.vue"),
-  },
-  {
-    path: "/velcome",
-    name: "Velcome",
-    component: () => import("../pages/Velcome.vue"),
-  },
-  {
-    path: "/creator-center",
-    name: "CreatorCenter",
-    component: () => import("../pages/CreatorCenter.vue"),
-  },
-  {
-    path: "/",
-    name: "home",
-    component: () => import("../pages/home.vue"),
+    component: () => import("../components/Skeleton.vue"),
+    redirect: "/discover",
     children: [
       {
         path: "discover",
-        name: "Discover",
         component: () => import("../pages/Discover.vue"),
-      },
-      {
-        path: "my-follows",
-        name: "MyFollows",
-        component: () => import("../pages/MyFollows.vue"),
-      },
-      {
-        path: "my-favorites",
-        name: "MyFavorites",
-        component: () => import("../pages/MyFavorites.vue"),
       },
     ],
   },
+  {
+    path: "/musician",
+    component: () => import("../pages/Musician/intro.vue"),
+  },
+  {
+    path: "/404",
+    name: "NotFound",
+    component: () => import("../pages/404.vue"),
+    hidden: true,
+    meta: { title: "404" },
+  },
+  { path: "/:pathMatch(.*)", redirect: "/404", name: "notMatch", hidden: true },
 ];
 //export router
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

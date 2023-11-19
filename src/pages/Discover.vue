@@ -1,8 +1,5 @@
 <template>
-  <div class="">
+  <div>
     discover
   </div>
 </template>
-<script>
-name: "discover";
-</script>

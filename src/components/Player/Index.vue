@@ -8,7 +8,6 @@
           <img class="w-14 h-14 rounded-full"
             src="https://tse3-mm.cn.bing.net/th/id/OIP-C.raU_1uKZdRb26GGcq1Dw5QHaHa?rs=1&pid=ImgDetMain" alt="" />
         </div>
-
       </div>
       <div class="w-full h-20">2</div>
     </div>
@@ -20,9 +19,9 @@
         </div>
       </div>
       <div class="w-full h-full flex">
-        <div class="  w-2/5 h-full flex justify-center">
-          <div class=" w-56 h-56 bg-white/10 rounded-full mt-20  flex justify-center items-center">
-            <img class=" w-52 h-52  rounded-full object-cover"
+        <div class="w-2/5 h-full flex justify-center">
+          <div class="w-56 h-56 bg-white/10 rounded-full mt-20 flex justify-center items-center">
+            <img class="w-52 h-52 rounded-full object-cover"
               src="https://tse3-mm.cn.bing.net/th/id/OIP-C.raU_1uKZdRb26GGcq1Dw5QHaHa?rs=1&pid=ImgDetMain" alt="" />
           </div>
         </div>
