@@ -10,6 +10,14 @@ const routes = [
         path: "discover",
         component: () => import("../pages/Discover.vue"),
       },
+      {
+        path: "my-follows",
+        component: () => import("../pages/MyFollows.vue"),
+      },
+      {
+        path: "my-favorites",
+        component: () => import("../pages/MyFavorites.vue"),
+      },
     ],
   },
   {
