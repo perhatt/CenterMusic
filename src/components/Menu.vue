@@ -1,26 +1,17 @@
 <template>
-  <div
-    class="h-full w-full bg-[rgb(26,26,33)] rounded-tl-3xl flex flex-col items-center pb-4"
-  >
+  <div class="h-full w-full bg-[rgb(26,26,33)] rounded-tl-3xl flex flex-col items-center pb-4">
     <div class="w-12 h-12 mt-6 cursor-pointer">
-      <img
-        class="w-full h-full rounded-md"
-        src="https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg"
-      />
+      <img class="w-full h-full rounded-md"
+        src="https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg" />
     </div>
     <div class="flex flex-col grow mt-4 gap-2">
-      <div
-        v-for="item in menu"
-        :key="item.link"
-        class="w-11 h-11 flex items-center justify-center bg-white/10 rounded-xl hover:bg-white/20 cursor-pointer"
-      >
+      <Router-link :to="item.link" v-for="item in menu" :key="item.link" active-class="bg-black"
+        class="w-11 h-11 flex items-center justify-center bg-white/10 rounded-xl hover:bg-white/20 cursor-pointer">
         <i class="iconfont" :class="`icon-${item.icon}`"></i>
-      </div>
+      </Router-link>
     </div>
     <div>
-      <div
-        class="w-11 h-11 flex items-center justify-center bg-white/10 rounded-xl hover:bg-white/20 cursor-pointer"
-      >
+      <div class="w-11 h-11 flex items-center justify-center bg-white/10 rounded-xl hover:bg-white/20 cursor-pointer">
         <i class="iconfont icon-settings-"></i>
       </div>
     </div>
@@ -36,17 +27,17 @@ export default {
         {
           name: "精选",
           icon: "home",
-          link: "/home",
+          link: "/discover",
         },
         {
-          name: "我喜欢的音乐",
+          name: "我的关注",
           icon: "user-",
-          link: "/like",
+          link: "/my-follows",
         },
         {
           name: "我的收藏",
           icon: "star",
-          link: "/home",
+          link: "/my-favorites",
         },
       ],
     };
@@ -54,8 +45,8 @@ export default {
 };
 </script>
 <style>
-.v-dialog > .v-overlay__content > .v-card,
-.v-dialog > .v-overlay__content > form > .v-card {
+.v-dialog>.v-overlay__content>.v-card,
+.v-dialog>.v-overlay__content>form>.v-card {
   border-radius: 20px !important;
 }
 </style>
