@@ -5,6 +5,7 @@ const routes = [
     path: "/",
     component: () => import("../components/Skeleton.vue"),
     redirect: "/discover",
+
     children: [
       {
         path: "discover",
@@ -19,6 +20,10 @@ const routes = [
         component: () => import("../pages/MyFavorites.vue"),
       },
     ],
+  },
+  {
+    path: "/login",
+    component: () => import("../pages/Login.vue"),
   },
   {
     path: "/musician",

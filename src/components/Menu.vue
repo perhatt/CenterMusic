@@ -1,9 +1,9 @@
 <template>
   <div class="h-full w-full bg-[rgb(26,26,33)] rounded-tl-3xl flex flex-col items-center pb-4">
-    <div class="w-12 h-12 mt-6 cursor-pointer">
+    <Router-link to="/login" class="w-12 h-12 mt-6 cursor-pointer">
       <img class="w-full h-full rounded-md"
         src="https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg" />
-    </div>
+    </Router-link>
     <div class="flex flex-col grow mt-4 gap-2">
       <Router-link :to="item.link" v-for="item in menu" :key="item.link" active-class="bg-black"
         class="w-11 h-11 flex items-center justify-center bg-white/10 rounded-xl hover:bg-white/20 cursor-pointer">
