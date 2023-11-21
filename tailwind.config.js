@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        "spin-slow": "spin 15s linear infinite",
+      },
+    },
     screens: {
       sm: "640px",
       md: "768px",

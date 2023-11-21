@@ -1,8 +1,6 @@
 <template>
   <transition name="fade">
-    <div
-      class="fixed top-[26px] right-[calc(10%+2px)] w-[calc(80%-4px)] h-[calc(100%-134px)] rounded-t-3xl  z-50 flex bg-[rgb(27,27,35)]"
-      v-show="visible">
+    <div class="w-[calc(80%-4px)] h-[calc(100%-134px)] rounded-t-3xl  z-50 flex bg-[rgb(27,27,35)]" v-show="visible">
       <div class="w-full h-full">
         <slot> </slot>
       </div>
