@@ -31,8 +31,6 @@
           </div>
 
 
-          <audio src="../../assets/music.mp3" @input="changePosition" :src="songUrl" ref="audioPlayer"
-            @ended="onEnded"></audio>
 
           <div @click="PlayMusic"
             class="w-10 h-10 hover:bg-red-500/50 bg-white/10 rounded-full text-lg flex justify-center items-center cursor-pointer">
@@ -76,8 +74,8 @@
       </li>
       <li v-for="item in musicList" :key="item.name"
         class="w-full h-12 px-2 flex items-center hover:bg-white/10 cursor-pointer">
-        <img class="w-10 h-10 rounded-xl" src="https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg"
-          alt="">
+        <img class="w-10 h-10 rounded-xl" :alt="item.name"
+          src="https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg" alt="">
         <div class="max-w-[160px] h-12 px-1 flex flex-col justify-center">
           <p class="text-xs font-bold whitespace-nowrap truncate">{{ item.name }}</p>
           <p class="text-xs whitespace-nowrap truncate text-white/40">singer</p>
@@ -89,19 +87,19 @@
         </div>
       </li>
     </ul>
+    <audio src="../../assets/music.mp3" @play="PlayMusic" @input="changePosition" @ended="onEnded"></audio>
   </div>
   <!-- LIst end -->
 </template>
 <script>
-import { ref } from 'vue';
 export default {
   data() {
     return {
       OpenPlayer: false,
-      songUrl: '../assets/music.mp3',
       OpenList: false,
       play: false,
       currentTime: '12',
+      SongIndex: 0,
       musicList: [
         {
           name: 'MusicName',
