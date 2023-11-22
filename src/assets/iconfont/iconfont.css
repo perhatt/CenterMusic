@@ -1,16 +1,32 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4277452 */
-  src: url('iconfont.woff2?t=1700317139491') format('woff2'),
-       url('iconfont.woff?t=1700317139491') format('woff'),
-       url('iconfont.ttf?t=1700317139491') format('truetype');
+  src: url('iconfont.woff2?t=1700640778148') format('woff2'),
+       url('iconfont.woff?t=1700640778148') format('woff'),
+       url('iconfont.ttf?t=1700640778148') format('truetype');
 }
 
 [class^="iconfont"],
-[class*="iconfont"] {
+[class*="iconfont"]{
   font-family: "iconfont" !important;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-gengduo:before {
+  content: "\e600";
+}
+
+.icon-albums:before {
+  content: "\e81d";
+}
+
+.icon-like-:before {
+  content: "\e85d";
+}
+
+.icon-timer-:before {
+  content: "\e860";
 }
 
 .icon-edit-:before {
@@ -25,16 +41,8 @@
   content: "\e85c";
 }
 
-.icon-bank:before {
-  content: "\e834";
-}
-
 .icon-calendar-:before {
   content: "\e837";
-}
-
-.icon-disc:before {
-  content: "\e83c";
 }
 
 .icon-search-:before {

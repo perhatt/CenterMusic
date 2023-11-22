@@ -6,6 +6,34 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "159969",
+      "name": "more",
+      "font_class": "gengduo",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "21893981",
+      "name": "albums",
+      "font_class": "albums",
+      "unicode": "e81d",
+      "unicode_decimal": 59421
+    },
+    {
+      "icon_id": "11249877",
+      "name": "like-1",
+      "font_class": "like-",
+      "unicode": "e85d",
+      "unicode_decimal": 59485
+    },
+    {
+      "icon_id": "11249892",
+      "name": "timer-1",
+      "font_class": "timer-",
+      "unicode": "e860",
+      "unicode_decimal": 59488
+    },
+    {
       "icon_id": "11249708",
       "name": "edit-1",
       "font_class": "edit-",
@@ -27,25 +55,11 @@
       "unicode_decimal": 59484
     },
     {
-      "icon_id": "11249639",
-      "name": "bank",
-      "font_class": "bank",
-      "unicode": "e834",
-      "unicode_decimal": 59444
-    },
-    {
       "icon_id": "11249660",
       "name": "calendar-1",
       "font_class": "calendar-",
       "unicode": "e837",
       "unicode_decimal": 59447
-    },
-    {
-      "icon_id": "11249707",
-      "name": "disc",
-      "font_class": "disc",
-      "unicode": "e83c",
-      "unicode_decimal": 59452
     },
     {
       "icon_id": "11249832",

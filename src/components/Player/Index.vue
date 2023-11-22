@@ -25,6 +25,12 @@
 
 
         <div class="relative flex-1 h-14 mb-4 flex justify-center items-center gap-2">
+
+          <div
+            class="w-10 h-10 mr-10 hover:bg-red-500/50 bg-white/10 rounded-full text-lg flex justify-center items-center cursor-pointer">
+            <i class="iconfont icon-like-"></i>
+          </div>
+
           <div @click="currentTime--"
             class="w-10 h-10  hover:font-bold transition-all hover:bg-white/10  rounded-full text-lg flex justify-center items-center cursor-pointer">
             <i class="iconfont icon-arrow-left-1"></i>
@@ -58,8 +64,63 @@
       </div>
     </div>
     <!-- Player Start -->
-    <div v-if="OpenPlayer" class="w-full h-auto flex-1 p-4">
-      {{ currentTime }}
+    <div v-if="OpenPlayer" class="relative w-full h-auto flex-1 p-4 flex overflow-hidden">
+      <!-- <div :class="addAlbum ? ' scale-100' : 'scale-0 opacity-0'"
+        class=" absolute top-0 left-0 bg-rd-500 w-full h-full transition-all duration-300 ease-in-out flex items-center justify-center">
+        <div class="w-56 h-64 bg-red-500">
+          <i class="icon-btn iconfont icon-close-" @click="addAlbum = false"></i>
+        </div>
+      </div> -->
+      <div class="w-full h-full rounded-3xl p-4 flex flex-col">
+        <div class="icon-btn" @click="OpenPlayer = false">
+          <i class="iconfont icon-arrow-down-"></i>
+        </div>
+        <div class="w-full flex-1 flex">
+          <div class="h-full w-96 flex flex-col items-center">
+            <img class="w-64 h-64 rounded-3xl mt-12"
+              src="https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg" alt="">
+            <p class="my-6 text-md font-bold max-w-[200px] text-center">Öğretmen Öğrencisine Aşık Oluyor</p>
+            <div class="w-full h-12  flex justify-center gap-2">
+              <div
+                class="w-12 h-12 bg-white/10 rounded-xl flex justify-center items-center text-2xl text-white/50 hover:text-white/90 cursor-pointer">
+                <i class="iconfont icon-like-"></i>
+              </div>
+              <div
+                class="w-12 h-12 bg-white/10 rounded-xl flex justify-center items-center text-2xl text-white/50 hover:text-white/90 cursor-pointer">
+                <i class="iconfont icon-download-"></i>
+              </div>
+
+            </div>
+          </div>
+          <div class="flex-1 h-full flex flex-col items-center">
+            <div class="w-full h-10 gap-2 flex justify-center">
+
+              <div class="w-auto h-10 bg-white/10  rounded-lg flex items-center text-sm font-bold">
+                <p class="text-white/60 pl-2 whitespace-nowrap">专辑:</p>
+                <router-link to="/album" @click="OpenPlayer = false"
+                  class="text-white ml-2 whitespace-nowrap truncate max-w-[130px] pr-2 hover:text-red-500 cursor-pointer">
+                  Zahir
+                  Musicsdsdferferferdsferferfe</router-link>
+
+              </div>
+              <div class="w-auto h-10 bg-white/10  rounded-lg flex items-center text-sm font-bold">
+                <p class="text-white/60 pl-2 whitespace-nowrap">歌手:</p>
+                <RouterLink to="/artist" @click="OpenPlayer = false"
+                  class="text-white ml-2 whitespace-nowrap truncate max-w-[120px] pr-1 hover:text-red-500 cursor-pointer">
+                  PerhatZywdn</RouterLink>
+                <div
+                  class="w-10 h-10 bg-white/10 rounded-xl ml-2 flex items-center justify-center cursor-pointer hover:bg-white/20 text-xl text-white/50 hover:text-white">
+                  <i class="iconfont icon-gengduo"></i>
+                </div>
+              </div>
+            </div>
+            <ul
+              class="w-64 text-center h-96 mt-10 flex flex-col py-2 overflow-y-scroll justify-center gap-2 transition-all duration-300 ease-in-out">
+              <li class="w-full h-auto max-h-[48px] text-sm font-bold">纯音乐，请赞赏</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Player End -->
   </div>
@@ -98,6 +159,7 @@ export default {
       OpenPlayer: false,
       OpenList: false,
       play: false,
+      // addAlbum: false,
       currentTime: '12',
       SongIndex: 0,
       musicList: [
