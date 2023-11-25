@@ -1,3 +1,3 @@
 <template>
-    <div>Artist</div>
+    <div>album</div>
 </template>

@@ -1,13 +1,12 @@
 <template>
   <div :class="OpenPlayer ? 'h-full rounded-3xl' : ''"
-    class="absolute left-0 bottom-0 w-full h-20 rounded-b-3xl bg-gray-900 transition-all duration-300 ease-in-out flex flex-col-reverse">
+    class="absolute left-0 bottom-0 w-full h-20 rounded-b-3xl bg-black/50 backdrop-blur-md transition-all duration-300 ease-in-out flex flex-col-reverse">
     <div class="w-full h-20 border-t border-white/20 border-spacing-1">
       <div class="w-full h-20 rounded-b-3xl flex items-center px-2">
         <!-- 音乐图片 -->
         <div class=" w-16 h-16 bg-white/20 rounded-full flex items-center justify-center cursor-pointer musicImg"
           @click="OpenPlayer = !OpenPlayer, OpenList = false">
-          <img class="w-14 h-14 rounded-full"
-            src="https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg" alt="">
+          <img class="w-14 h-14 rounded-full" src="https://picsum.photos/56/56" alt="">
         </div>
         <!-- 歌曲信息 -->
         <div class="w-auto min-w-[100px] h-14 ml-2">
@@ -77,8 +76,7 @@
         </div>
         <div class="w-full flex-1 flex">
           <div class="h-full w-96 flex flex-col items-center">
-            <img class="w-64 h-64 rounded-3xl mt-12"
-              src="https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg" alt="">
+            <img class="w-64 h-64 rounded-3xl mt-12" src="https://picsum.photos/256/256" alt="">
             <p class="my-6 text-md font-bold max-w-[200px] text-center">Öğretmen Öğrencisine Aşık Oluyor</p>
             <div class="w-full h-12  flex justify-center gap-2">
               <div
@@ -135,8 +133,7 @@
       </li>
       <li v-for="item in musicList" :key="item.name"
         class="w-full h-12 px-2 flex items-center hover:bg-white/10 cursor-pointer">
-        <img class="w-10 h-10 rounded-xl" :alt="item.name"
-          src="https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg" alt="">
+        <img class="w-10 h-10 rounded-xl" :alt="item.name" :src="item.img" alt="">
         <div class="max-w-[160px] h-12 px-1 flex flex-col justify-center">
           <p class="text-xs font-bold whitespace-nowrap truncate">{{ item.name }}</p>
           <p class="text-xs whitespace-nowrap truncate text-white/40">singer</p>
@@ -166,22 +163,22 @@ export default {
         {
           name: 'MusicName',
           singer: 'Singer',
-          img: 'https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg',
+          img: 'https://picsum.photos/40/40?1',
           url: '',
         }, {
           name: 'MusicName',
           singer: 'Singer',
-          img: 'https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg',
+          img: 'https://picsum.photos/40/40?2',
           url: '',
         }, {
           name: 'MusicName',
           singer: 'Singer',
-          img: 'https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg',
+          img: 'https://picsum.photos/40/40?3',
           url: '',
         }, {
           name: 'MusicName',
           singer: 'Singer',
-          img: 'https://tupian.qqw21.com/article/UploadPic/2020-6/202062820443133016.jpg',
+          img: 'https://picsum.photos/40/40?4',
           url: '',
         },
       ],

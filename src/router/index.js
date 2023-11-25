@@ -12,6 +12,10 @@ const routes = [
         component: () => import("../pages/Discover.vue"),
       },
       {
+        path: "/login",
+        component: () => import("../pages/Login.vue"),
+      },
+      {
         path: "my-follows",
         component: () => import("../pages/MyFollows.vue"),
       },
@@ -21,17 +25,28 @@ const routes = [
       },
       {
         path: "artist",
-        component: () => import("../pages/Artist.vue"),
+        component: () => import("../pages/Artist/Index.vue"),
+        redirect: "/artist/music",
+        children: [
+          {
+            path: "music",
+            component: () => import("../pages/Artist/Music.vue"),
+          },
+          {
+            path: "album",
+            component: () => import("../pages/Artist/Album.vue"),
+          },
+          {
+            path: "details",
+            component: () => import("../pages/Artist/Details.vue"),
+          },
+        ],
       },
       {
         path: "album",
         component: () => import("../pages/Album.vue"),
       },
     ],
-  },
-  {
-    path: "/login",
-    component: () => import("../pages/Login.vue"),
   },
   {
     path: "/musician",

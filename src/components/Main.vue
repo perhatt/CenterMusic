@@ -9,18 +9,15 @@
     </div>
   </div>
 </template>
-<script>
-import { Transition } from 'vue';
-</script>
-<style>
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
-  transition: all .5s;
-  opacity: 1;
+  transition: all 0.3s;
+  opacity: 0;
 }
 
 .fade-enter,
 .fade-leave-to {
-  opacity: 0;
+  transform: translateX(-100%);
 }
 </style>
