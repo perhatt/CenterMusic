@@ -5,23 +5,41 @@ const routes = [
     path: "/",
     component: () => import("../components/Skeleton.vue"),
     redirect: "/discover",
-
     children: [
+      {
+        path: "my",
+        component: () => import("../pages/My/Index.vue"),
+        redirect: "/my/play-list",
+        children: [
+          {
+            path: "play-list",
+            component: () => import("../pages/My/PlayList.vue"),
+          },
+          {
+            path: "follows",
+            component: () => import("../pages/My/Follows.vue"),
+          },
+        ],
+      },
+      {
+        path: "history",
+        component: () => import("../pages/History.vue"),
+      },
+      {
+        path: "graph",
+        component: () => import("../pages/Graph.vue"),
+      },
+      {
+        path: "/settigs",
+        component: () => import("../pages/Settings.vue"),
+      },
       {
         path: "discover",
         component: () => import("../pages/Discover.vue"),
       },
       {
-        path: "/login",
+        path: "login",
         component: () => import("../pages/Login.vue"),
-      },
-      {
-        path: "my-follows",
-        component: () => import("../pages/MyFollows.vue"),
-      },
-      {
-        path: "my-favorites",
-        component: () => import("../pages/MyFavorites.vue"),
       },
       {
         path: "artist",
@@ -44,13 +62,20 @@ const routes = [
       },
       {
         path: "album",
-        component: () => import("../pages/Album.vue"),
+        component: () => import("../pages/Album/Index.vue"),
+        redirect: "/album/music",
+        children: [
+          {
+            path: "music",
+            component: () => import("../pages/Album/Music.vue"),
+          },
+          {
+            path: "details",
+            component: () => import("../pages/Album/Details.vue"),
+          },
+        ],
       },
     ],
-  },
-  {
-    path: "/musician",
-    component: () => import("../pages/Musician/intro.vue"),
   },
   {
     path: "/404",

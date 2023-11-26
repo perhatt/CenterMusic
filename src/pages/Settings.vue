@@ -1,3 +1,3 @@
 <template>
-    <div>Intro</div>
+    <div>设置</div>
 </template>

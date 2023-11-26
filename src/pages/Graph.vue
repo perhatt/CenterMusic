@@ -1,5 +1,5 @@
 <template>
     <div>
-        MyFavorites
+        排行榜
     </div>
 </template>

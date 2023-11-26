@@ -1,7 +1,7 @@
 <template>
   <div class="h-full w-full bg-[hsl(240,12%,12%)] rounded-l-3xl flex flex-col items-center pb-4">
-    <Router-link to="/login" class="w-12 h-12 mt-6 cursor-pointer">
-      <img class="w-full h-full rounded-md" src="https://picsum.photos/48/48" />
+    <Router-link to="/my" class="w-12 h-12 mt-6 cursor-pointer">
+      <img class="w-full h-full rounded-full" src="https://picsum.photos/48/48" />
     </Router-link>
     <div class="flex flex-col grow mt-4 gap-2">
       <Router-link :to="item.link" v-for="item in menu" :key="item.link" active-class="bg-red-500"
@@ -23,15 +23,19 @@ export default {
           link: "/discover",
         },
         {
-          name: "我的关注",
-          icon: "user-",
-          link: "/my-follows",
+          name: "历史播放",
+          icon: "timer-",
+          link: "/history",
         },
         {
-          name: "我的收藏",
-          icon: "star",
-          link: "/my-favorites",
-        },
+          name: '排行榜',
+          icon: 'graph-',
+          link: '/graph',
+        }, {
+          name: '设置',
+          icon: 'settings-',
+          link: '/settigs',
+        }
       ],
     };
   },

@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "577381",
+      "name": "like",
+      "font_class": "like",
+      "unicode": "e760",
+      "unicode_decimal": 59232
+    },
+    {
+      "icon_id": "4942675",
+      "name": "logout",
+      "font_class": "logout",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "16290359",
+      "name": "add",
+      "font_class": "add",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
       "icon_id": "159969",
       "name": "more",
       "font_class": "gengduo",
@@ -18,13 +39,6 @@
       "font_class": "albums",
       "unicode": "e81d",
       "unicode_decimal": 59421
-    },
-    {
-      "icon_id": "11249877",
-      "name": "like-1",
-      "font_class": "like-",
-      "unicode": "e85d",
-      "unicode_decimal": 59485
     },
     {
       "icon_id": "11249892",
@@ -90,13 +104,6 @@
       "unicode_decimal": 59438
     },
     {
-      "icon_id": "11249626",
-      "name": "arrow-left-3",
-      "font_class": "arrow-left-",
-      "unicode": "e82f",
-      "unicode_decimal": 59439
-    },
-    {
       "icon_id": "11249627",
       "name": "arrow-left-2",
       "font_class": "arrow-left-1",
@@ -109,13 +116,6 @@
       "font_class": "arrow-up-",
       "unicode": "e831",
       "unicode_decimal": 59441
-    },
-    {
-      "icon_id": "11249632",
-      "name": "arrow-right-3",
-      "font_class": "arrow-right-1",
-      "unicode": "e832",
-      "unicode_decimal": 59442
     },
     {
       "icon_id": "11249658",
@@ -137,13 +137,6 @@
       "font_class": "check-",
       "unicode": "e836",
       "unicode_decimal": 59446
-    },
-    {
-      "icon_id": "11249694",
-      "name": "cloud-upload",
-      "font_class": "cloud-upload",
-      "unicode": "e838",
-      "unicode_decimal": 59448
     },
     {
       "icon_id": "11249704",
