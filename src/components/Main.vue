@@ -1,6 +1,6 @@
 <template>
-  <div class="relative w-full h-full ">
-    <div class="absolute w-full h-full p-4">
+  <div class="relative w-full h-full  overflow-y-scroll">
+    <div class="absolute w-full h-full">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
