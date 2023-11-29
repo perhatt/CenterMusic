@@ -1,11 +1,13 @@
 <script >
+import { message } from 'ant-design-vue';
+const [messageApi, contextHolder] = message.useMessage();
 export default {
+    components: { contextHolder },
     data() {
         return {
-            login: true,
             statuse: true,
             UserEmail: '',
-            message: '',
+            code: '',
             UserPwd: '',
             rules: {
                 UserEmail: {
@@ -14,7 +16,11 @@ export default {
                 },
                 UserPwd: {
                     rule: /^[a-zA-Z0-9_-]{6,16}$/,
-                    msg: '密码格式不正确'
+                    msg: '密码格式不正确,6-16位'
+                },
+                code: {
+                    rule: /^[0-9]{4}$/,
+                    msg: '验证码格式不正确,4位数字'
                 }
             }
         }
@@ -25,17 +31,19 @@ export default {
         },
         GetLogin() {
             if (!this.Validate('UserEmail')) return;
+            if (!this.Validate('code')) return;
             if (!this.Validate('UserPwd')) return;
             if (this.statuse == false) {
-                this.message = '请勾选同意'
+                messageApi.error("请勾选同意");
             }
+            messageApi.success("登录成功");
         },
         Validate(key) {
             let bool = true
             if (!this.rules[key].rule.test(this[key])) {
                 bool = false
                 //以后引入一个Toast组件
-                this.message = this.rules[key].msg
+                messageApi.error(this.rules[key].msg);
                 return false
             }
             return bool
@@ -46,72 +54,43 @@ export default {
 </script>
 <template>
     <div class="w-full h-full flex items-center justify-center">
+        <context-Holder />
         <div class="bg-white/10 w-96 h-2/3 p-4 rounded-3xl flex flex-col">
 
-            <div v-if="login" class="px-4" action="">
-                <div class="w-full h-10 flex items-center gap-1 text-xl mb-4">
+            <div class="px-4" action="">
+                <div class=" h-10 flex items-center gap-1 text-xl mb-4">
                     <p class="font-bold">
                         CenterMusic
                     </p>
                 </div>
-                <div class="w-full h-10 flex items-center gap-1 mb-4">
-                    <p class="text-sm font-bold w-12 ">邮箱</p>
-                    <div class="flex-1 px-3 h-10 bg-white/10 rounded-full border border-white/20 border-spacing-1">
-                        <input class="w-full h-full border-none outline-none bg-transparent text-xs font-bold" type="text"
-                            v-model="UserEmail" placeholder="请输入邮箱" />
+                <form>
+                    <div class="w-full h-10 flex items-center gap-1 mb-4">
+                        <p class="text-sm font-bold w-12 ">邮箱</p>
+                        <div class="flex-1 px-3 h-10 bg-white/10 rounded-full border border-white/20 border-spacing-1">
+                            <input v-model="UserEmail"
+                                class="w-full h-full border-none outline-none bg-transparent text-xs font-bold" type="text"
+                                placeholder="请输入邮箱" />
+                        </div>
                     </div>
-                </div>
-                <div class="w-full h-10 flex items-center gap-1">
-                    <p class="text-sm font-bold w-12 ">密码</p>
-                    <div class="flex-1 px-3 h-10 bg-white/10 rounded-full border border-white/20 border-spacing-1">
-                        <input v-model="UserPwd"
-                            class="w-full h-full border-none outline-none bg-transparent text-xs font-bold" type="password"
-                            placeholder="请输入密码6-16位" />
+                    <div class="w-full h-10 flex items-center gap-1 mb-4">
+                        <p class="text-sm font-bold w-12 ">验证码</p>
+                        <div class="flex-1 px-3 h-10 bg-white/10 rounded-full border border-white/20 border-spacing-1">
+                            <input v-model="code"
+                                class="w-full h-full border-none outline-none bg-transparent text-xs font-bold" type="code"
+                                placeholder="请输入4位验证码" />
+                        </div>
+                        <div class="font-btn w-20 text-xs">获取验证码</div>
                     </div>
-                </div>
-                <div class="w-full h-10 flex mt-2 items-center cursor-pointer">
-                    <p class="text-white text-xs font-bold" @click="login = !login">忘记密码</p>
-                </div>
-                <div class="w-full flex  items-center gap-3">
-                    <div class="font-btn" @click="GetLogin">登录</div>
-                    <div class="font-btn" @click="login = !login">注册</div>
-                </div>
-            </div>
-
-
-
-
-
-            <div v-if="!login" class="px-4" action="">
-                <div class=" h-10 flex items-center gap-1 text-xs  cursor-pointer mb-4" @click="login = !login">
-                    <p class="font-bold">
-                        <i class="iconfont icon-arrow-left-"></i>
-                        回到登录
-                    </p>
-                </div>
-                <div class="w-full h-10 flex items-center gap-1 mb-4">
-                    <p class="text-sm font-bold w-12 ">邮箱</p>
-                    <div class="flex-1 px-3 h-10 bg-white/10 rounded-full border border-white/20 border-spacing-1">
-                        <input class="w-full h-full border-none outline-none bg-transparent text-xs font-bold" type="text"
-                            placeholder="请输入邮箱" />
+                    <div class="w-full h-10 flex items-center gap-1">
+                        <p class="text-sm font-bold w-12 ">密码</p>
+                        <div class="flex-1 px-3 h-10 bg-white/10 rounded-full border border-white/20 border-spacing-1">
+                            <input v-model="UserPwd"
+                                class="w-full h-full border-none outline-none bg-transparent text-xs font-bold"
+                                type="password" placeholder="密码6-16" autocomplete="off" />
+                        </div>
                     </div>
-                </div>
-                <div class="w-full h-10 flex items-center gap-1 mb-4">
-                    <p class="text-sm font-bold w-12 ">验证码</p>
-                    <div class="flex-1 px-3 h-10 bg-white/10 rounded-full border border-white/20 border-spacing-1">
-                        <input class="w-full h-full border-none outline-none bg-transparent text-xs font-bold" type="text"
-                            placeholder="请输入4位验证码" />
-                    </div>
-                    <div class="font-btn w-20 text-xs">获取验证码</div>
-                </div>
-                <div class="w-full h-10 flex items-center gap-1">
-                    <p class="text-sm font-bold w-12 ">密码</p>
-                    <div class="flex-1 px-3 h-10 bg-white/10 rounded-full border border-white/20 border-spacing-1">
-                        <input class="w-full h-full border-none outline-none bg-transparent text-xs font-bold"
-                            type="password" placeholder="设置密码" />
-                    </div>
-                </div>
-                <div class="font-btn mt-6" @click="$router.push('/')">注册</div>
+                </form>
+                <div class="font-btn mt-6" @click="GetLogin">注册</div>
             </div>
             <div class="w-full h-10 flex items-center  font-bold text-xs px-4 mt-4 cursor-pointer">
 
@@ -125,7 +104,6 @@ export default {
                         </label>
                     </div>
                     <div class="mb-1"> 我已阅读并同意<a href="">《用户协议》</a></div>
-                    {{ message }}
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full bg-[hsl(240,12%,12%)] rounded-l-3xl flex flex-col items-center pb-4">
+  <div class="h-full w-full bg-[#1b1b22] rounded-l-3xl flex flex-col items-center pb-4">
     <Router-link to="/my" class="w-12 h-12 mt-6 cursor-pointer">
       <img class="w-full h-full rounded-full" src="https://picsum.photos/48/48" />
     </Router-link>
